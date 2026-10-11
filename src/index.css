@@ -1,0 +1,197 @@
+/* Reset global para eliminar los estilos predeterminados de Vite */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* HEADER */
+.pageName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 2px #B74000;
+  margin: 0;
+  padding: 10px;
+  position: sticky;
+  background: white;
+  top: 0;
+  z-index: 10;
+}
+
+/* FOOTER */
+.footerPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #511C00;
+  padding: 10px 0;
+}
+
+.footerPage p {
+  padding: 5px;
+  margin: 0;
+}
+
+/* SECCIÓN PRINCIPAL / GALERÍA */
+.mainSection {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+}
+
+.mainSection img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  margin: 1%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.mainSection img:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 600px) {
+  .mainSection img {
+    width: 200px;
+    height: 150px;
+    margin: 5px;
+  }
+}
+
+/* TARJETA DE CADA FOTO */
+.scoreCard {
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+  padding: 15px;
+}
+
+/* ESTRELLAS DE CALIFICACIÓN */
+.stars {
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.stars a {
+  cursor: pointer;
+  user-select: none;
+}
+
+.star {
+  font-size: 28px;
+  color: #ccc;
+  transition: color 0.2s ease;
+}
+
+.active {
+  font-size: 28px;
+  color: gold;
+  transition: color 0.2s ease;
+}
+
+.active:hover,
+.star:hover {
+  color: #ffcc00;
+}
+
+/* BOTÓN DE PROMEDIO */
+.enviarSeleccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.boton {
+  background: linear-gradient(135deg, #B74000, #d84a00);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #d84a00, #B74000);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.boton:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  min-width: 320px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
